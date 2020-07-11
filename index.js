@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const axios = require("axios");
 const fs = require("fs");
 const util = require("util");
 
@@ -57,7 +58,20 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
- 
+    inquirer
+        .prompt(questions)
+        .then(answers => {
+            axios.get("api.github.com/users/" + answers.username)
+                .then(response => {
+                    var imageUrl = response.data.avatar_url;
+                    answers.image = imageUrl;
+                    fs.writeFile("ReadMe.md", generateMarkdown(answers), function (err) {
+                        if (err) {
+                            throw err;
+                        }
+                    })
+                })
+        })
 }
 
 init();
