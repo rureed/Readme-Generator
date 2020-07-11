@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const axios = require("axios");
 const fs = require("fs");
-const util = require("util");
+// const util = require("util");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 const questions = [
     {
@@ -43,7 +44,7 @@ const questions = [
     },
     {
         type: "input",
-        name: "Contributing",
+        name: "contributing",
         message: "Enter info about contributing:"
     },
     {
