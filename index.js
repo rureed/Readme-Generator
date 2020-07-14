@@ -33,8 +33,8 @@ const questions = [
     {
         type: "checkbox",
         name: "license",
-        message: "Select your license:"
-        default: "None",
+        message: "Select your license:",
+        // default: "None",
         choices: [
             "APACHE 2.0",
             "GPL 3.0",
@@ -55,21 +55,24 @@ const questions = [
 ];
 
 
-function writeToFile(fileName, data) {
-}
+// function writeToFile(fileName, data) {
+// }
 
 function init() {
     inquirer
         .prompt(questions)
         .then(answers => {
-            axios.get("api.github.com/users/" + answers.username)
+            console.log(answers);
+            axios.get("https://api.github.com/users/"+answers.name)
                 .then(response => {
                     var imageUrl = response.data.avatar_url;
                     answers.image = imageUrl;
                     fs.writeFile("ReadMe.md", generateMarkdown(answers), function (err) {
                         if (err) {
                             throw err;
-                        }
+                        };
+                        console.log("New ReadMe has been generated.")
+
                     })
                 })
         })

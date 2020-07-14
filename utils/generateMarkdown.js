@@ -3,7 +3,9 @@ function generateMarkdown(data) {
 # Application:
 ${data.appName}
 
-[<img src="https://img.shields.io/badge/I%20made%20a-custom%20badge-blue" />] ${data.repo}
+
+
+<img src=https://img.shields.io/badge/MyFirst-Badge-blue />
 
 ## Description:
 ${data.appName}
@@ -32,8 +34,8 @@ ${data.contributing}
 ${data.tests}
 
 ## Questions:
-${data.image}
-If you have any questions, open an issue or contact ${data.username} at ${data.email}.
+<img src=${data.image}>
+If you have any questions, open an issue or contact ${data.name} at ${data.email}.
 
 
 `;
