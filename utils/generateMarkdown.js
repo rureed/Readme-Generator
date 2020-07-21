@@ -34,7 +34,7 @@ ${data.contributing}
 ${data.tests}
 
 ## Questions:
-<img src=${data.image}>
+![GitHub Profile Image](${data.image})
 If you have any questions, open an issue or contact ${data.name} at ${data.email}.
 
 
