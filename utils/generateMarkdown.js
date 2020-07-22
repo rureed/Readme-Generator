@@ -5,7 +5,7 @@ ${data.appName}
 
 
 
-<img src=https://img.shields.io/badge/MyFirst-Badge-blue />
+<img src=https://img.shields.io/badge/rureed-bootcamp-orange />
 
 ## Description:
 ${data.appName}
